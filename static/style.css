@@ -1,0 +1,441 @@
+/* General Styles */
+
+ {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    width: 100vw;
+    font-family: 'Bebas Neue', sans-serif;
+    background-color: black;
+    color: white;
+    overflow-x: hidden; /* Prevent horizontal scroll */
+}
+
+/* Logo */
+.logo {
+    position: fixed;
+    top: 20px;
+    left: 30px;
+    font-size: 32px;
+    font-weight: bold;
+    color: orange;
+    text-transform: uppercase;
+    z-index: 2000;
+    letter-spacing: 2px;
+}
+
+/* Navbar */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 15px 0;
+    text-align: center;
+    z-index: 1000;
+    height: 40px; /* reduce this to make it thinner */
+    padding: 10px 20px; /* optional: reduce padding */
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+}
+
+.navbar ul li {
+    display: inline;
+}
+
+.navbar ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 22px;
+    text-transform: uppercase;
+    padding: 10px 20px;
+    transition: 0.3s;
+}
+
+.navbar ul li a:hover {
+    color: orange;
+}
+
+/* Sections */
+.section {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    padding: 20px;
+    color: white;
+}
+
+/* Home Section */
+#home {
+    background: url('ffhpnew.png') no-repeat center center/cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-top: 100px;
+    padding-bottom: 50px;
+}
+
+.home-content {
+    text-align: center;
+    animation: fadeInUp 1s ease-in-out;
+}
+
+/* Title and Slogan */
+.title {
+    font-size: 150px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.subline {
+    font-size: 30px;
+    color: orange;
+    text-transform: uppercase;
+    margin-top: -120px;
+}
+
+/* Button Styles */
+.button {
+    margin-top: 20px;
+    padding: 15px 40px;
+    font-size: 22px;
+    color: white;
+    background: transparent;
+    border: 2px solid white;
+    cursor: pointer;
+    font-family: 'Bebas Neue', sans-serif;
+    text-transform: uppercase;
+    transition: 0.3s ease-in-out;
+}
+
+.button:hover {
+    background: white;
+    color: black;
+    box-shadow: 0 0 10px white;
+}
+
+/* About & Contact */
+#about, #contact {
+    background: rgba(20, 20, 20, 0.8);
+    color: white;
+}
+
+/* Login/Signup Page */
+.login-page {
+    background: url('forest_fire9.jpeg') no-repeat center center/cover;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Bebas Neue', sans-serif;
+    color: white;
+}
+
+.login-container {
+    background: rgba(0, 0, 0, 0.7);
+    padding: 40px;
+    border-radius: 15px;
+    text-align: center;
+    width: 90%;
+    max-width: 400px;
+    animation: fadeInUp 1s ease;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+    font-size: 18px;
+}
+.login-container h2 {
+    font-size: 40px; /* Adjust size as needed */
+}
+
+.login-container input {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    font-family: 'Bebas Neue',sans-serif;
+}
+
+.login-container .button {
+    width: 100%;
+}
+
+/* Fade Animation */
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Tweaks */
+@media (max-width: 768px) {
+    .title {
+        font-size: 60px;
+    }
+
+    .subline {
+        font-size: 20px;
+    }
+
+    .button {
+        font-size: 18px;
+        padding: 10px 30px;
+    }
+
+    .navbar ul {
+        gap: 20px;
+    }
+
+    .navbar ul li a {
+        font-size: 18px;
+    }
+
+    .logo {
+        font-size: 24px;
+        left: 15px;
+    }
+}
+.news-section {
+    margin-top: 100px;
+    padding: 2em 0;
+    padding-top: 275px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.news-section h2 {
+    text-align: center;
+    font-size: 2em;
+    margin-bottom: 1em;
+    font-family: 'Bebas Neue', cursive;
+    
+}
+
+.news-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2em;
+    padding: 0 2em;
+}
+.news-container .news-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    padding: 1em;
+    border-radius: 10px;
+    background-color: #f8f9fa;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.news-card {
+    background-color: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 1.5em;
+    transition: transform 0.3s ease;
+    font-family: 'Oswald', sans-serif;
+}
+
+.news-card:hover {
+    transform: scale(1.03);
+}
+
+.news-card h3 {
+    font-size: 1.2em;
+    margin-bottom: 0.5em;
+    color: #333;
+}
+
+.news-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin: 0.5em 0;
+    background-color: #eee;
+}
+
+
+.news-card p {
+    font-size: 0.95em;
+    color: #555;
+}
+
+.news-card .source {
+    font-size: 0.85em;
+    color: #888;
+    margin-top: 0.5em;
+}
+
+.read-more {
+    display: inline-block;
+    margin-top: 1em;
+    color: #d9534f;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.read-more:hover {
+    text-decoration: underline;
+}
+
+.error {
+    text-align: center;
+    color: red;
+    font-weight: bold;
+}
+#contact {
+    padding: 50px 30px;
+    border-radius: 12px;
+    margin-top: 60px;
+    font-family: 'Bebas Neue', sans-serif;
+}
+
+#contact h2 {
+    color: #e5720c;
+    font-size: 60px;
+    margin-bottom: 50px;
+    margin-top: 0px;
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: start;
+    margin-bottom: 30px;
+}
+
+.contact-left,
+.contact-right {
+    font-family: 'Arial', sans-serif;
+}
+
+.contact-left .emergency-info {
+    font-size: 30px;
+    margin-bottom: 10px;
+    font-family: 'Oswald', sans-serif;
+}
+
+.contact-left .emergency-number {
+    font-size: 30px;
+    font-weight: bold;
+    color: #d9534f;
+}
+
+.contact-right h3 {
+    margin-top: 0;
+    color: #2e4a26;
+    font-family: 'Oswald', sans-serif;
+    font-size: 30px;
+}
+
+.useful-links li,
+.recommended-apps li {
+    margin-bottom: 8px;
+    font-size: 20px;
+    color: #eee;
+    font-family: 'Oswald', sans-serif;
+}
+
+.useful-links a {
+    text-decoration: none;
+    color: #e9ecf1;
+    font-size: 20px;
+    font-family: 'Oswald', sans-serif;
+}
+
+.useful-links a:hover {
+    text-decoration: underline;
+}
+
+.disclaimer {
+    font-size: 14px;
+    color: #555;
+    font-style: italic;
+    margin-top: 20px;
+}
+
+@media (max-width: 768px) {
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+}
+/* About Section */
+#about, #contact {
+    background: rgb(3, 3, 3);
+    color: white;
+}
+.about-section {
+    
+    padding: 60px 20px;
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: left;
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.8;
+}
+  
+  .about-title {
+    font-size: 60px;
+    font-weight: bold;
+    color: #d66805;
+    margin-bottom: 30px;
+    text-align: center;
+    font-family: 'Bebas Neue',sans-serif;
+    margin-top: -50px;
+  }
+  
+  .about-content p {
+    margin-bottom: 20px;
+    font-size: 20px;
+    font-family: 'Oswald', sans-serif;
+  }
+  
+  .about-content strong {
+    color: #f8f9f9;
+    font-size: 20px;
+  }
+  .about-background {
+    background-image: url('ffhpnew.png'); /* adjust if needed */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 100px 20px; /* Add padding so content doesn't stick to edges */
+}
+
+/* Optional: if your .about-section needs a white box effect */
+.about-section {
+    background-color: rgba(255, 255, 255, 0.95); /* semi-transparent white */
+    padding: 60px 20px;
+    max-width: 900px;
+    margin: 0 auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.8;
+}
+

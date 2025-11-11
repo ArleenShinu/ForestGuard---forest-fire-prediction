@@ -1,0 +1,72 @@
+[
+    {
+        "username": "JJ",
+        "email": "jj@gmail.com",
+        "password": "scrypt:32768:8:1$M1PTnDefPPE5gLEC$77a81d0b0af1c4ab375cd23ecc439ab5a67b992eacd937da6bb2a171d04b6c79f431d0024c4afab1b607517bfd4cbce8435ef49ec3a8873d8c696c0d4f4b8614"
+    },
+    {
+        "username": "merees",
+        "email": "merees@gmail.com",
+        "password": "scrypt:32768:8:1$i43Dco7JrefVk8Qs$8cdb0955702f593490acec90525edb32598dc454c70b63a67ab1f487843d59db5610379fae14048d4f094c8cee6e6341efcbc7e3d9778f282dd21235e75bc9d7"
+    },
+    {
+        "username": "qq",
+        "email": "qq@gmail.com",
+        "password": "scrypt:32768:8:1$lz2Yjalzb8pHPEG9$708eef7ee1808854c8a88708e487721b633053335da6fd65680fdd0e1bb040176a4b21de19c6450898d3faade2108e28aa940b4c10d43c5d22cc4e867f0e8944"
+    },
+    {
+        "username": "aa",
+        "email": "aa@gmail.com",
+        "password": "scrypt:32768:8:1$6P9xSERfQNdF0Z3J$3412864470619960e532ea8282e23a4c4a8c6ff96496baa507bad668a2e4d24b02cad50be7aa2ef5808c6bbec6267d4e7bb9ae39cc5c40884d189369ab64d5e5"
+    },
+    {
+        "username": "qwerty",
+        "email": "qwerty@gmail.com",
+        "password": "scrypt:32768:8:1$gspBecVVslU239Md$7b1f2a4bc637d81eb6d954da838922abc95969c20ca1db0253bd8e116211bc4bd981224088126a5af25c30b048a5f2681cc1b1ed5cb044e70cb311492222076a"
+    },
+    {
+        "username": "akhil",
+        "email": "akhil@gmail.com",
+        "password": "scrypt:32768:8:1$6nCElkEbltCZJfvY$5817439469d8819a9cca87d2bb7510bbf9790c421ff10bea7f5dce558f903a11d185f3d6bc8247d461540dfb442c8c5e06096c613e5b4e0f53870a6b9073c812"
+    },
+    {
+        "username": "jeremy",
+        "email": "jerlove@gmail.com",
+        "password": "scrypt:32768:8:1$zVKMVE9juGOVjH2G$c99e06fb62d6f69fec49f89883822bea3cea34babd5fa52c9e19ac8448b8688db766f6afb0f2a428c632a0a69428f39148bb22cd0796327dae0e2250c67c6d1d"
+    },
+    {
+        "username": "jj1",
+        "email": "jj_20042023@outlook.com",
+        "password": "scrypt:32768:8:1$fKIcVh6GlhoGta3j$2135545d03b5612747124214390e3ad9fa1659de97196518aabce3c839d1280773eb80f2f00fdc83a2b56556a607b6ab8a333a30e8cc787996eba1a33248cbc5"
+    },
+    {
+        "username": "sree",
+        "email": "sree@gmail.com",
+        "password": "scrypt:32768:8:1$BCbzCHt1QmhyiiE4$45a294de0a5964898b135db5c30b03e2a1ba849cccf8b4604ddf43a9dbc09aa2227a0e3c04d6694d7ad3355b39f9e6c5464a0407e4570e0de4b6f74298dce8d3"
+    },
+    {
+        "username": "pr",
+        "email": "pr@mandan.com",
+        "password": "scrypt:32768:8:1$uCAeGh1BFeaqGTvv$2bdba7788c720d1c62e500a310837b5dfe8566b7983b91435d9b8e48d1af85d2c709867fe622521ae292c5678f0200568c33dc7b84249f2c5e7329492f5b73ac"
+    },
+    {
+        "username": "jaru",
+        "email": "jaru@yahoo.com",
+        "password": "scrypt:32768:8:1$JKD9XQISiV5SyAt0$589761f0372ea38e52c52dda10a8ff6f0e33da5959f59b5131ef7567ab50e029074c235338838262ed8d57814f6a99eb621f6f55ed10246f548fd8935861a9a4"
+    },
+    {
+        "username": "arleen",
+        "email": "mereesnoby12@gmail.com",
+        "password": "scrypt:32768:8:1$APpAycTumfMTZHv6$90e77a7c0c973bb41029a7d20160c690bab767491519d1bbb1ccdd96ce5b63740c948c47eeaf49903d0419a5ede4fda64109a531e5eb9b079966f70735e7b599"
+    },
+    {
+        "username": "arleena",
+        "email": "mereesnoby12@gmail.com",
+        "password": "scrypt:32768:8:1$YpPTyvgXI7G92XsR$7ffe45f8062df78c49ec037afe2cc24347d1feab1275dd64a36285069db5cf757b604f087de0a959b866b2beee9e9a31625c7f5b29b5a05ab2ae54b8cbf17263"
+    },
+    {
+        "username": "mer",
+        "email": "mer@gmail.com",
+        "password": "scrypt:32768:8:1$XnDn8rYVOodUZS53$491e7c0100274b12b1ad5f97195d0921f8b029da55755d1e389aac4b1f18b58f24f001a8932a9fb142f281b5cae34b32045acf182f8bd779c15bb9e74a4ddf51"
+    }
+]

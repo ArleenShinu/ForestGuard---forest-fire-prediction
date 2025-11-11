@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - ForestGuard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        
+        @keyframes slideIn {
+            from { transform: translateX(-50px); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+        
+        @keyframes glow {
+            0% { box-shadow: 0 0 5px rgba(255, 85, 0, 0.6); }
+            50% { box-shadow: 0 0 20px rgba(255, 85, 0, 0.8); }
+            100% { box-shadow: 0 0 5px rgba(255, 85, 0, 0.6); }
+        }
+        
+        @keyframes backgroundShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        
+        body {
+            background-image: url('{{ url_for('static', filename='forest_fire_8.jpg') }}');
+            background-size: cover;
+            background-position: center;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            color: white;
+            font-family: Arial, sans-serif;
+            animation: fadeIn 1s ease-out;
+        }
+        
+        .header {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            animation: slideIn 0.8s ease-out;
+        }
+        
+        .logo {
+            font-size: 36px;
+            color: #ff7700;
+            font-family: 'Bebas Neue', sans-serif;
+            position: relative;
+            animation: pulse 3s infinite;
+        }
+        
+        .logo::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 3px;
+            background: linear-gradient(90deg, #ff7700, #ff3300);
+            animation: expandWidth 2s forwards;
+        }
+        
+        @keyframes expandWidth {
+            from { width: 0; }
+            to { width: 100%; }
+        }
+        
+        .logout-btn {
+            background: linear-gradient(135deg, rgba(255, 59, 48, 0.8), rgba(255, 0, 0, 0.8));
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 18px;
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+            font-family: 'Bebas Neue', sans-serif;
+            display: inline-block; /* ✅ Fix for anchor buttons */
+            text-decoration: none;
+            z-index: 9999; /* Ensure it's above other elements */
+            pointer-events: auto;
+        }
+
+        
+        .dashboard-container {
+            max-width: 1200px;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            animation: fadeIn 1s ease-out 0.3s both;
+        }
+        
+        .panel {
+            background: rgba(0, 0, 0, 0.75);
+            border-radius: 10px;
+            padding: 30px;
+            backdrop-filter: blur(10px);
+            text-align: center;
+            max-width: 500px;
+            width: 100%;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+            animation: glow 3s infinite;
+            border: 1px solid rgba(255, 119, 0, 0.3);
+        }
+        
+        h1 {
+            font-size: 38px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            position: relative;
+            display: inline-block;
+            font-family: 'Bebas Neue', sans-serif;
+        }
+        
+        h1::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #ff7700, transparent);
+        }
+        
+        .input-box {
+            width: 100%;
+            padding: 12px;
+            margin: 12px 0;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: white;
+            font-size: 16px;
+            border-radius: 5px;
+            outline: none;
+            text-align: center;
+            transition: all 0.3s;
+            animation: fadeIn 0.5s ease-out;
+        }
+        
+        .input-box:focus {
+            border-color: #ff7700;
+            box-shadow: 0 0 10px rgba(255, 119, 0, 0.5);
+            transform: translateY(-2px);
+        }
+        
+        .input-box:nth-child(1) { animation-delay: 0.2s; }
+        .input-box:nth-child(2) { animation-delay: 0.4s; }
+        .input-box:nth-child(3) { animation-delay: 0.6s; }
+        .input-box:nth-child(4) { animation-delay: 0.8s; }
+        .input-box:nth-child(5) { animation-delay: 1s; }
+        
+        .btn {
+            background: linear-gradient(135deg, #ff5500, #ff3300);
+            color: white;
+            font-size: 25px;
+            padding: 12px;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+            border-radius: 5px;
+            transition: all 0.3s;
+            margin-top: 20px;
+            position: relative;
+            overflow: hidden;
+            animation: fadeIn 0.5s ease-out 1.2s both;
+            font-family: 'Bebas Neue', sans-serif;
+        }
+        
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(255, 85, 0, 0.4);
+        }
+        
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: 0.5s;
+        }
+        
+        .btn:hover::before {
+            left: 100%;
+        }
+        
+        .result {
+            margin-top: 25px;
+            font-size: 20px;
+            font-weight: bold;
+            opacity: 0;
+            animation: fadeIn 1s ease-out forwards;
+        }
+        
+        .flash-message {
+            padding: 12px;
+            border-radius: 5px;
+            margin-bottom: 15px;
+            font-weight: bold;
+            animation: slideIn 0.5s ease-out;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+        }
+        
+        .flash-success {
+            background: linear-gradient(135deg, rgba(40, 167, 69, 0.7), rgba(40, 200, 69, 0.7));
+        }
+        
+        .flash-error {
+            background: linear-gradient(135deg, rgba(220, 53, 69, 0.7), rgba(255, 53, 69, 0.7));
+        }
+        
+        .flash-info {
+            background: linear-gradient(135deg, rgba(23, 162, 184, 0.7), rgba(23, 192, 214, 0.7));
+        }
+        
+        /* Risk level styling */
+        .risk-low {
+            color: #4caf50;
+            text-shadow: 0 0 5px rgba(76, 175, 80, 0.7);
+        }
+        
+        .risk-medium {
+            color: #ff9800;
+            text-shadow: 0 0 5px rgba(255, 152, 0, 0.7);
+        }
+        
+        .risk-high {
+            color: #f44336;
+            text-shadow: 0 0 5px rgba(244, 67, 54, 0.7);
+        }
+        
+        .risk-extreme {
+            color: #9c27b0;
+            text-shadow: 0 0 5px rgba(156, 39, 176, 0.7);
+            animation: pulse 1.5s infinite;
+        }
+        
+        /* Floating animated elements */
+        .floating-element {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: -1;
+            opacity: 0.5;
+            filter: blur(5px);
+        }
+        
+        .floating-element:nth-child(1) {
+            background: radial-gradient(circle, rgba(255, 119, 0, 0.5), transparent);
+            top: 10%;
+            left: 10%;
+            animation: float 15s linear infinite;
+        }
+        
+        .floating-element:nth-child(2) {
+            background: radial-gradient(circle, rgba(255, 0, 0, 0.5), transparent);
+            top: 70%;
+            left: 80%;
+            animation: float 20s linear infinite reverse;
+        }
+        
+        .floating-element:nth-child(3) {
+            background: radial-gradient(circle, rgba(255, 85, 0, 0.5), transparent);
+            top: 30%;
+            left: 60%;
+            animation: float 18s linear infinite;
+        }
+        
+        @keyframes float {
+            0% { transform: translate(0, 0) rotate(0deg); }
+            25% { transform: translate(50px, 25px) rotate(90deg); }
+            50% { transform: translate(0, 50px) rotate(180deg); }
+            75% { transform: translate(-50px, 25px) rotate(270deg); }
+            100% { transform: translate(0, 0) rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <!-- Floating animated elements -->
+    <div class="floating-element"></div>
+    <div class="floating-element"></div>
+    <div class="floating-element"></div>
+
+    <div class="header">
+        <div class="logo">FORESTGUARD</div>
+        <a href="{{ url_for('logout') }}" class="logout-btn">LOGOUT</a>
+    </div>
+    
+
+    <div class="dashboard-container">
+        <div class="panel">
+            {% with messages = get_flashed_messages(with_categories=true) %}
+                {% if messages %}
+                    {% for category, message in messages %}
+                        <div class="flash-message flash-{{ category }}">{{ message }}</div>
+                    {% endfor %}
+                {% endif %}
+            {% endwith %}
+            
+            
+            <h1>FOREST FIRE PREDICTION</h1>
+            <form action="{{ url_for('predict') }}" method="POST">
+                <input type="number" name="temperature" class="input-box" placeholder="Temperature (°C)" min="0" max="50" step="any" required
+                    title="Temp (Temperature): Represents the average temperature, influencing fire risk.Range-0-50">
+                
+                <input type="number" name="rain" class="input-box" placeholder="Rain" step="any" min="0" max="20" required
+                    title="Rain (Rainfall): Measures the amount of rainfall, which helps in reducing fire spread.Range-0-20">
+                
+                <input type="number" name="ffmc" class="input-box" placeholder="FFMC" step="any" min="0" max="99" required
+                    title="FFMC (Fine Fuel Moisture Code): Indicates the dryness of small surface fuels, affecting fire ignition.Range-0-99.">
+                
+                <input type="number" name="dmc" class="input-box" placeholder="DMC" step="any" min="0" max="150" required
+                    title="DMC (Duff Moisture Code): Reflects the moisture content of deeper organic layers, influencing fire intensity.Range-0-150">
+                
+                <input type="number" name="isi" class="input-box" placeholder="ISI" step="any" min="0" max="20" required
+                    title="ISI (Initial Spread Index): Estimates the potential speed of fire spread immediately after ignition.Range-0-20">
+                
+                <button type="submit" class="btn">PREDICT</button>
+            </form>
+            
+            
+            
+            {% if prediction %}
+            <div class="result">
+                <p>Fire: <span class="risk-{{ prediction|lower }}">{{ prediction }}</span></p>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+
+    <script>
+        // Add some interactive elements
+        document.addEventListener('DOMContentLoaded', function() {
+            // Animate inputs when focused
+            const inputs = document.querySelectorAll('.input-box');
+            inputs.forEach(input => {
+                input.addEventListener('focus', function() {
+                    this.style.transform = 'translateY(-2px)';
+                });
+                
+                input.addEventListener('blur', function() {
+                    this.style.transform = 'translateY(0)';
+                });
+            });
+            
+            // Add button click effect
+            const button = document.querySelector('.btn');
+            button.addEventListener('mousedown', function() {
+                this.style.transform = 'translateY(2px)';
+            });
+            
+            button.addEventListener('mouseup', function() {
+                this.style.transform = 'translateY(-3px)';
+            });
+            
+            // Add subtle background animation
+            const panel = document.querySelector('.panel');
+            panel.addEventListener('mousemove', function(e) {
+                const x = e.clientX / window.innerWidth;
+                const y = e.clientY / window.innerHeight;
+                
+                panel.style.backgroundImage = `radial-gradient(circle at ${x*100}% ${y*100}%, rgba(40, 40, 40, 0.8), rgba(0, 0, 0, 0.8))`;
+            });
+        });
+    </script>
+</body>
+</html>

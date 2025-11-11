@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>ForestGuard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+</head>
+<body>
+    <!-- Top-left logo -->
+    <div class="logo">FORESTGUARD</div>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <ul>
+            <li><a href="{{ url_for('index') }}#home">Home</a></li>
+            <li><a href="{{ url_for('index') }}#about">About</a></li>
+            <li><a href="{{ url_for('index') }}#contact">Contact</a></li>
+            <li><a href="{{ url_for('news') }}">News</a></li>
+        </ul>
+    </nav>
+
+    <!-- Home section -->
+    <div class="section" id="home">
+        <div class="home-content">
+            <h1 class="title">FORESTGUARD</h1>
+            <p class="subline">Forest Fire Prediction Service</p>
+            <button class="button" onclick="location.href='{{ url_for('login') }}'">Get Started</button>
+        </div>
+    </div>
+
+    <!-- About section with background -->
+<div class="about-background">
+    <div class="section about-section" id="about">
+        <h2 class="about-title">About Us</h2>
+        <div class="about-content">
+          <p>
+            At <strong>ForestGuard</strong>, we harness the power of <strong>Artificial Intelligence</strong> to predict forest fire occurrence and severity based on real-time weather conditions.
+          </p>
+          <p>
+            We use <strong>machine learning models</strong> trained on historical weather data based on Algeria to detect patterns that signal potential fire outbreaks.
+          </p>
+          <p>
+            Our system analyzes key indicators such as <strong>temperature</strong>, <strong>rainfall</strong>, <strong>wind speed</strong>, and <strong>dryness levels</strong> to provide accurate risk assessments.
+          </p>
+          <p>
+            In addition to fire prediction, we also keep users informed with the <strong>latest fire-related news</strong> and <strong>emergency contact information</strong> to ensure quick action in case of danger.
+          </p>
+        </div>
+    </div>
+  </div>
+  
+      
+
+    <div class="section" id="contact">
+        <h2>🚨 Contact in Case of Fire</h2>
+    
+        <div class="contact-grid">
+            <!-- LEFT SIDE: Emergency Info -->
+            <div class="contact-left">
+                <p class="emergency-info">
+                    In case of a forest fire in <strong>Kerala</strong>, immediately report it to the <strong>Kerala Forest Department</strong> by calling their toll-free number:
+                </p>
+                <p class="emergency-number">📞 <strong>1800 425 4733</strong></p>
+            </div>
+    
+            <!-- RIGHT SIDE: Websites & Apps -->
+            <div class="contact-right">
+                <h3>🌐 Useful Websites</h3>
+                <ul class="useful-links">
+                    <li><a href="https://keralaforest.gov.in/" target="_blank">Kerala Forest Department</a></li>
+                    <li><a href="https://fsi.nic.in/" target="_blank">Forest Survey of India</a></li>
+                    <li><a href="https://ndma.gov.in/" target="_blank">NDMA (Disaster Management)</a></li>
+                </ul>
+    
+                <h3>📱 Recommended Apps</h3>
+                <ul class="recommended-apps">
+                    <li><strong>Suraksha App</strong> – Report forest fire incidents.</li>
+                    <li><strong>MyGov App</strong> – Alerts and updates.</li>
+                    <li><strong>DISHA App</strong> – Emergency assistance platform.</li>
+                </ul>
+            </div>
+        </div>
+    
+        <p class="disclaimer">
+            <em>Note:</em> This website is for awareness only. For real emergencies, contact official services.
+        </p>
+    </div>
+    
+</body>
+</html>
