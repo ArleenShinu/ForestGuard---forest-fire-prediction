@@ -1,7 +1,7 @@
 Forest Fire Prediction Web App
 This project is a web application built with Flask that predicts the occurrence and severity of forest fires based on meteorological data. It also features a user login system and a dashboard that displays relevant news articles.
 
-✨ Key Features
+Key Features:
 User Authentication: Secure login and registration system (username, email, password).
 
 Fire Prediction: Uses a machine learning model to predict whether a fire will occur based on user input.
